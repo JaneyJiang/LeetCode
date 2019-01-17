@@ -2,10 +2,14 @@ from collections import Counter
 
 class Solution(object):
     def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """   
         counter = Counter(s)
         ans = 0
         all_even = True
-        for c,count in counter.items():
+        for count in counter.values():
             ans += count
             if count % 2 == 1:
                 if all_even:
