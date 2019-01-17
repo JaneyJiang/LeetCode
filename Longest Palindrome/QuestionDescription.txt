@@ -1,0 +1,24 @@
+﻿Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.
+
+This is case sensitive, for example "Aa" is not considered a palindrome here.
+
+Note:
+Assume the length of given string will not exceed 1,010.
+
+Example:
+
+Input:
+"abccccdd"
+
+Output:
+7
+
+Explanation:
+One longest palindrome that can be built is "dccaccd", whose length is 7.
+
+这是一个简单的问题，主要是需要注意字符串里的相同字母的个数，奇数个数和偶数个数处理方法。我们只要一个奇数，其他都处理成偶数来加。
+这里我的处理方法是，设一个标记为all_even当为真时返回ans，假时返回ans+1,在ans+=count过程中，
+我们把所有奇数都-1作为偶数来加入，这样就不会遗漏需要的内容了。
+
+//题目分析在
+https://www.jianshu.com/p/da4a79200e79
