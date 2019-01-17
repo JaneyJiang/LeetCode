@@ -29,8 +29,11 @@ class Solution:
         if not gas or not cost:
             return -1
         N = len(gas)
+        #这种写法从c/C++语言角度并不能加快速度，但是python有些行为是C/C++底层，所以比直接用python循环遍历快
         res_gas = [g-c for g,c in zip(gas,cost)]
+        #加逆序排序的效果并不好，因为排序本身需要消耗nlogn的时间,而算法本身的时间
         index_candidate = [i for i,res in enumerate(res_gas) if res>=0]
+        
         
         for start in index_candidate:
             cur_gas = res_gas[start]

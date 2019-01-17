@@ -28,7 +28,7 @@ class canCompleteCircuitTest(unittest.TestCase):
         cost = [3,4,3]
         self.assertEqual(Solution().canCompleteCircuitAdvance(gas,cost),-1)
 
-    def test_same_gas_cost(self):
+    def test_same_gas_cost(self):#这个例子不好，因为解不唯一
         gas  = [1,1,1]
         cost = [1,1,1]
         self.assertEqual(Solution().canCompleteCircuitAdvance(gas,cost),0)
