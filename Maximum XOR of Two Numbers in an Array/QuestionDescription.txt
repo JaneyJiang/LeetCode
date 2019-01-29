@@ -1,0 +1,22 @@
+﻿Given a non-empty array of numbers, a0, a1, a2, … , an-1, where 0 ≤ ai < 231.
+
+Find the maximum result of ai XOR aj, where 0 ≤ i, j < n.
+
+Could you do this in O(n) runtime?
+
+Example:
+
+Input: [3, 10, 5, 25, 2, 8]
+
+Output: 28
+
+Explanation: The maximum result is 5 ^ 25 = 28.
+
+这是一个一开始既好想也难想的问题，我最开始想到了，其中一个数肯定是最大的那个数，
+但是其实不确切，应该是，其中的一个数，肯定是最高位上为1的那个数，但最高为上为1的数，并不一定就一个，所以直接选择某个数作为基准
+是不靠谱的，但是深想，既然，最高位为1的数，那么，我们可以构造一个掩码mask，从最高位开始依次添加位1的一位，作为我们的最大值，
+在掩码和子集中的交集中选取。初始化最大值为0，每次都计算一个可能的最大值，如果可能的最大值与交集中异或的值仍在交集中，
+那么，那个值就是我们当前掩码位的最大值，保留，用以构造下一个可能的最大值。直到我们把所有位都遍历一遍。
+//题目分析在
+https://www.jianshu.com/p/c378bb542a45
+写的不太好，需要继续提炼到易懂。
